@@ -6,6 +6,9 @@ class MyColors{
   static const  corPrimaria = Color(0xffF9FBFA);
   static const  corAcao= Color(0xff025951);
   static const  corInativo= Color(0xff9197A8);
+  static const  corTextoBotao= Color(0xffffffff);
+  static const  corStatusAtivo= Colors.green;
+  static const  corStatusInativo = Colors.red;
 
   static const  primarySwatch =  MaterialColor(
     0xff025951, // 0% comes in here, this will be color picked if no shade is selected when defining a Color property which doesn’t require a swatch.

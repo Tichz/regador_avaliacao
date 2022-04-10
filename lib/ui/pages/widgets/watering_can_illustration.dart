@@ -7,11 +7,13 @@ class WateringCanIllustration extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      'assets/images/regador.svg',
-      width: 120,
-      alignment: Alignment.center,
-      color: MyColors.corAcao,
+    return Center(
+      child: SvgPicture.asset(
+        'assets/images/regador.svg',
+        width: 120,
+        alignment: Alignment.center,
+        color: MyColors.corAcao,
+      ),
     );
   }
 }

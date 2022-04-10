@@ -27,8 +27,19 @@ class MyThemes {
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
-        border: InputBorder.none,
-        hintStyle: MyTextStyle.hintTextFieldStyle(context: context, isDark: isDark),
+        border: const UnderlineInputBorder(
+            borderSide: const BorderSide(color: MyColors.corAcao)),
+        hintStyle:
+            MyTextStyle.hintTextFieldStyle(context: context, isDark: isDark),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          shape: const StadiumBorder(),
+          textStyle:
+              MyTextStyle.elevatedButtonStyle(context: context, isDark: isDark),
+          onPrimary: MyColors.corTextoBotao,
+          padding: const EdgeInsets.all(18)
+        ),
       ),
     );
   }

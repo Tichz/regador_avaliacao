@@ -6,83 +6,103 @@ import 'package:regador_avaliacao/ui/styles/my_text_styles.dart';
 
 class CardRegador extends StatelessWidget {
   String nomeRegador;
-  int capacidadeRegador;
+  int reservatorio;
   DateTime ultimaAtividade;
-
+  String statusRegador;
+  TimeOfDay horarioInicial;
+  TimeOfDay horarioFinal;
+  String numeroSerie;
+String capacidadeRegador;
   CardRegador({
     Key? key,
     required this.nomeRegador,
-    required this.capacidadeRegador,
+    required this.reservatorio,
     required this.ultimaAtividade,
+    required this.statusRegador,
+    required this.horarioInicial,
+    required this.horarioFinal,
+    required this.numeroSerie,
+    required this.capacidadeRegador,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: InkWell(
-        onTap: () {},
-        borderRadius: BorderRadius.circular(20),
-        child: Container(
-          margin: EdgeInsets.all(8),
-          height: 140,
-          width: double.maxFinite,
-          child: Row(
-            children: [
-              SizedBox(
-                width: 20,
-              ),
-              SvgPicture.asset(
-                'assets/images/regador.svg',
-                height: 80,
-                color: MyColors.corAcao,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Nome Regador:',
-                      style: MyTextStyle.highlightedTextCard(
-                          context: context, isDark: false),
-                    ),
-                    Text(
-                      nomeRegador,
-                      style:
-                          MyTextStyle.textCard(context: context, isDark: false),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      'Reservatório:',
-                      style: MyTextStyle.highlightedTextCard(
-                          context: context, isDark: false),
-                    ),
-                    Text(
-                      '$capacidadeRegador%',
-                      style:
-                          MyTextStyle.textCard(context: context, isDark: false),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      'Última atividade:',
-                      style: MyTextStyle.highlightedTextCard(
-                          context: context, isDark: false),
-                    ),
-                    Text(
-                      '${DateFormat('hh:mm a').format(ultimaAtividade)}',
-                      style:
-                          MyTextStyle.textCard(context: context, isDark: false),
-                    ),
-                  ],
+      child: Container(
+        margin: EdgeInsets.all(8),
+        height: 140,
+        width: double.maxFinite,
+        child: Row(
+          children: [
+            SizedBox(
+              width: 20,
+            ),
+            Column(
+              children: [
+                SvgPicture.asset(
+                  'assets/images/regador.svg',
+                  height: 80,
+                  color: MyColors.corAcao,
                 ),
+                SizedBox(
+                  height: 16,
+                ),
+                Text(
+                  statusRegador,
+                  style: MyTextStyle.statusRegadorStyle(
+                    context: context,
+                    isDark: false,
+                    statusRegador: statusRegador,
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Nome Regador:',
+                    style: MyTextStyle.highlightedTextCard(
+                        context: context, isDark: false),
+                  ),
+                  Text(
+                    nomeRegador,
+                    style:
+                        MyTextStyle.textCard(context: context, isDark: false),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                    'Reservatório:',
+                    style: MyTextStyle.highlightedTextCard(
+                        context: context, isDark: false),
+                  ),
+                  Text(
+                    '$reservatorio%',
+                    style:
+                        MyTextStyle.textCard(context: context, isDark: false),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                    'Última atividade:',
+                    style: MyTextStyle.highlightedTextCard(
+                        context: context, isDark: false),
+                  ),
+                  Text(
+                    '${DateFormat('hh:mm a').format(ultimaAtividade)}',
+                    style:
+                        MyTextStyle.textCard(context: context, isDark: false),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

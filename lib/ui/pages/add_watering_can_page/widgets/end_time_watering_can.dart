@@ -19,7 +19,7 @@ class EndTimeWateringCan extends StatelessWidget {
             children: [
               Text(
                 'Horário Final',
-                style: MyTextStyle.labelTextFieldStyle(
+                style: MyTextStyle.titulosRegadorStyle(
                     context: context, isDark: false),
               ),
               Text(

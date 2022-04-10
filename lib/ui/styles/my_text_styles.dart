@@ -41,19 +41,42 @@ class MyTextStyle {
       fontSize: 14,
       fontWeight: FontWeight.normal,
     );
-  }static TextStyle hintTextFieldStyle(
+  }
+  static TextStyle hintTextFieldStyle(
       {required BuildContext context, required bool isDark}) {
     return const TextStyle(
       color: MyColors.corAcao,
       fontSize: 18,
       fontWeight: FontWeight.normal,
     );
-  }static TextStyle labelTextFieldStyle(
+  }
+  static TextStyle titulosRegadorStyle(
       {required BuildContext context, required bool isDark}) {
     return const TextStyle(
-      color: MyColors.corAcao,
+      color: MyColors.texto,
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+    );
+  }static TextStyle conteudoRegadorStyle(
+      {required BuildContext context, required bool isDark}) {
+    return const TextStyle(
+      color: MyColors.texto,
+      fontSize: 16,
+      fontWeight: FontWeight.normal,
+    );
+  }
+  static TextStyle elevatedButtonStyle(
+      {required BuildContext context, required bool isDark}) {
+    return const TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.bold,
+    );
+  }static TextStyle statusRegadorStyle(
+      {required BuildContext context, required bool isDark,required String statusRegador}) {
+    return  TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: statusRegador == 'Ativo' ? MyColors.corStatusAtivo : MyColors.corStatusInativo,
     );
   }
 }

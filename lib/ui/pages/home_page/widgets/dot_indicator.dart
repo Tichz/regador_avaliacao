@@ -11,15 +11,18 @@ class DotIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<RegadorAppProvider>(
       builder: (context, provider, child) {
-        return Center(
-          child: AnimatedSmoothIndicator(
-            activeIndex: provider.activeIndex,
-            count: provider.listaRegadores.length,
-            effect: WormEffect(
-              dotHeight: 10,
-              dotWidth: 10,
-              dotColor: MyColors.corInativo,
-              activeDotColor: MyColors.corAcao
+        return Visibility(
+          visible: provider.listaRegadores.isNotEmpty,
+          child: Center(
+            child: AnimatedSmoothIndicator(
+              activeIndex: provider.activeIndex,
+              count: provider.listaRegadores.length,
+              effect: WormEffect(
+                dotHeight: 10,
+                dotWidth: 10,
+                dotColor: MyColors.corInativo,
+                activeDotColor: MyColors.corAcao
+              ),
             ),
           ),
         );
