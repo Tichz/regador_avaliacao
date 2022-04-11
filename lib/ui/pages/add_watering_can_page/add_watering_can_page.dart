@@ -15,52 +15,64 @@ class AddWateringCanPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Regador'),
-      ),
-      body: Consumer<RegadorAppProvider>(builder: (context, provider, child) {
-        return Padding(
-          padding: const EdgeInsets.fromLTRB(18, 20, 18, 0),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // const WateringCanIllustration(),
-                const SizedBox(
-                  height: 24,
-                ),
-                const SizedBox(
-                  height: 24,
-                ),
-                const NumeroSerieTextField(),
-                const SizedBox(
-                  height: 24,
-                ),
-                const NomeIdentificacaoTextField(),
-                const SizedBox(
-                  height: 24,
-                ),
-                const CapacidadeRegadorTextField(),
-                const SizedBox(
-                  height: 24,
-                ),
-                Row(
-                  children: const [
-                    StartTimeWateringCan(),
-                    Spacer(),
-                    EndTimeWateringCan(),
-                  ],
-                ),
-                const SizedBox(
-                  height: 32,
-                ),
-                BotaoAdicionarRegador(index: index),
-              ],
+    return Consumer<RegadorAppProvider>(
+        builder: (context, provider, child) {
+          return Scaffold(
+          appBar: AppBar(
+            title: const Text('Regador'),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                provider.resetarControllers();
+                Navigator.pop(context);
+              },
             ),
           ),
+
+          body: Consumer<RegadorAppProvider>(builder: (context, provider, child) {
+            return Padding(
+              padding: const EdgeInsets.fromLTRB(18, 20, 18, 0),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    // const WateringCanIllustration(),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    const NumeroSerieTextField(),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    const NomeIdentificacaoTextField(),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    const CapacidadeRegadorTextField(),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    Row(
+                      children: const [
+                        StartTimeWateringCan(),
+                        Spacer(),
+                        EndTimeWateringCan(),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 32,
+                    ),
+                    BotaoAdicionarRegador(index: index),
+                  ],
+                ),
+              ),
+            );
+          }),
         );
-      }),
+      }
     );
   }
 }
