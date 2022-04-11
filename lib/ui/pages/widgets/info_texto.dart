@@ -14,11 +14,11 @@ class InfoTexto extends StatelessWidget {
       children: [
         Text(
           titulo,
-          style: MyTextStyle.titulosRegadorStyle(context: context, isDark: false),
+          style: MyTextStyle.titulosRegadorStyle(context: context),
         ), Text(
 
           conteudo,
-          style: MyTextStyle.conteudoRegadorStyle(context: context, isDark: false),
+          style: MyTextStyle.conteudoRegadorStyle(context: context),
         ),
       ],
     );

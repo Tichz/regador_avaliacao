@@ -18,7 +18,7 @@ class RegadorApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Regador App',
-        theme: MyThemes.lightTheme(context: context, isDark: false),
+        theme: MyThemes.lightTheme(context: context),
         home: const HomePage(),
       ),
     );

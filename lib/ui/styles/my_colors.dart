@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class MyColors{
   static const  corNeutra = Color(0xffF0F1F3);
   static const  texto = Color(0xff333738);
+  static const  textoSemDestaque = Color(0xff677078);
   static const  corPrimaria = Color(0xffF9FBFA);
   static const  corAcao= Color(0xff025951);
   static const  corInativo= Color(0xff9197A8);
@@ -11,7 +12,7 @@ class MyColors{
   static const  corStatusInativo = Colors.red;
 
   static const  primarySwatch =  MaterialColor(
-    0xff025951, // 0% comes in here, this will be color picked if no shade is selected when defining a Color property which doesn’t require a swatch.
+    0xff025951, // 0%
     <int, Color>{
       50:  Color(0xff025049),//10%
       100:  Color(0xff024741),//20%

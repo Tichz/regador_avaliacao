@@ -22,19 +22,17 @@ class _NumeroSerieTextFieldState extends State<NumeroSerieTextField> {
   Widget build(BuildContext context) {
     return Consumer<RegadorAppProvider>(builder: (context, provider, child) {
       return TextField(
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           hintText: 'Número de Série',
         ),
-        keyboardType: TextInputType.numberWithOptions(decimal: false,signed: false),
+        keyboardType:
+            const TextInputType.numberWithOptions(decimal: false, signed: false),
         textInputAction: TextInputAction.next,
         controller: provider.numeroSerieController,
         onChanged: (_) {
-          // provider.pegarControllerNumeroSerie(
-          //   controllerNumeroSerie: _numeroSerieController,
-          // );
-          provider.habilitarBotao();
+          provider.habilitarBotaoAdicionarRegadores();
         },
-        style: MyTextStyle.hintTextFieldStyle(context: context, isDark: false),
+        style: MyTextStyle.hintTextFieldStyle(context: context),
         cursorColor: MyColors.corAcao,
       );
     });

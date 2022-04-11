@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:regador_avaliacao/provider/regador_app_provider.dart';
-import 'package:regador_avaliacao/ui/pages/add_watering_can_page/widgets/botao_adicionar_regador.dart';
-import 'package:regador_avaliacao/ui/pages/add_watering_can_page/widgets/capacidade_regador_text_field.dart';
-import 'package:regador_avaliacao/ui/pages/add_watering_can_page/widgets/end_time_watering_can.dart';
-import 'package:regador_avaliacao/ui/pages/add_watering_can_page/widgets/nome_identificacao_text_field.dart';
-import 'package:regador_avaliacao/ui/pages/add_watering_can_page/widgets/numero_serie_text_field.dart';
-import 'package:regador_avaliacao/ui/pages/add_watering_can_page/widgets/start_time_watering_can.dart';
 
-class AddWateringCanPage extends StatelessWidget {
-  int? index;
+import 'widgets/botao_adicionar_regador.dart';
+import 'widgets/capacidade_regador_text_field.dart';
+import 'widgets/horario_final_regador.dart';
+import 'widgets/nome_identificacao_text_field.dart';
+import 'widgets/numero_serie_text_field.dart';
+import 'widgets/horario_inicial_regador.dart';
 
-  AddWateringCanPage({Key? key, int? this.index}) : super(key: key);
+class AdicionarRegadorPage extends StatelessWidget {
+  final int? index;
+
+ const AdicionarRegadorPage({Key? key, this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +20,11 @@ class AddWateringCanPage extends StatelessWidget {
         builder: (context, provider, child) {
           return Scaffold(
           appBar: AppBar(
-            title: const Text('Regador'),
+            title: const Text('Adicionar Regador'),
             leading: IconButton(
-              icon: Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back),
               onPressed: () {
-                provider.resetarControllers();
+                provider.resetarControllersRegador();
                 Navigator.pop(context);
               },
             ),
@@ -36,10 +37,6 @@ class AddWateringCanPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // const WateringCanIllustration(),
-                    const SizedBox(
-                      height: 24,
-                    ),
                     const SizedBox(
                       height: 24,
                     ),
@@ -57,9 +54,9 @@ class AddWateringCanPage extends StatelessWidget {
                     ),
                     Row(
                       children: const [
-                        StartTimeWateringCan(),
+                        HorarioInicialRegador(),
                         Spacer(),
-                        EndTimeWateringCan(),
+                        HorarioFinalRegador(),
                       ],
                     ),
                     const SizedBox(

@@ -3,8 +3,7 @@ import 'package:regador_avaliacao/ui/styles/my_colors.dart';
 import 'package:regador_avaliacao/ui/styles/my_text_styles.dart';
 
 class MyThemes {
-  static ThemeData lightTheme(
-      {required BuildContext context, required bool isDark}) {
+  static ThemeData lightTheme({required BuildContext context}) {
     return ThemeData(
       primarySwatch: MyColors.primarySwatch,
       fontFamily: "OpenSans",
@@ -12,8 +11,7 @@ class MyThemes {
       appBarTheme: AppBarTheme(
         backgroundColor: MyColors.corNeutra,
         centerTitle: true,
-        titleTextStyle:
-            MyTextStyle.appBarTextStyle(context: context, isDark: false),
+        titleTextStyle: MyTextStyle.appBarTextStyle(context: context),
         elevation: 0,
         iconTheme: const IconThemeData(
           color: MyColors.texto,
@@ -28,18 +26,15 @@ class MyThemes {
       ),
       inputDecorationTheme: InputDecorationTheme(
         border: const UnderlineInputBorder(
-            borderSide: const BorderSide(color: MyColors.corAcao)),
-        hintStyle:
-            MyTextStyle.hintTextFieldStyle(context: context, isDark: isDark),
+            borderSide: BorderSide(color: MyColors.corAcao)),
+        hintStyle: MyTextStyle.hintTextFieldStyle(context: context),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          shape: const StadiumBorder(),
-          textStyle:
-              MyTextStyle.elevatedButtonStyle(context: context, isDark: isDark),
-          onPrimary: MyColors.corTextoBotao,
-          padding: const EdgeInsets.all(18)
-        ),
+            shape: const StadiumBorder(),
+            textStyle: MyTextStyle.elevatedButtonStyle(context: context),
+            onPrimary: MyColors.corTextoBotao,
+            padding: const EdgeInsets.all(18)),
       ),
     );
   }

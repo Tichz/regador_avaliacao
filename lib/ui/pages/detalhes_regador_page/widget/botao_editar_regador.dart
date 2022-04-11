@@ -1,30 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:regador_avaliacao/provider/regador_app_provider.dart';
-import 'package:regador_avaliacao/ui/pages/add_watering_can_page/add_watering_can_page.dart';
+
+import '../../adicionar_regador_page/adicionar_regador_page.dart';
 
 class BotaoEditarRegador extends StatelessWidget {
-  int index;
+  final int index;
 
-  BotaoEditarRegador({Key? key, required this.index}) : super(key: key);
+  const BotaoEditarRegador({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Consumer<RegadorAppProvider>(builder: (context, provider, child) {
       return ElevatedButton(
         onPressed: () {
-          provider.carregarCamposTextoRegador(
-            index
-          );
-          provider.habilitarBotao();
+          provider.carregarCamposTextoRegador(index);
+          provider.habilitarBotaoAdicionarRegadores();
+          provider.atualizarNomeBotaoAdicionarRegador(
+              nome: 'Atualizar Regador');
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => AddWateringCanPage(index: index),
+              builder: (context) => AdicionarRegadorPage(index: index),
             ),
           );
         },
-        child: Text('Editar Regador'),
+        child: const Text('Editar Regador'),
       );
     });
   }

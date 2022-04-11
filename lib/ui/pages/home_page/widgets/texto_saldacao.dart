@@ -11,11 +11,11 @@ class TextoSaldacao extends StatelessWidget {
       children: [
         Text(
           'Bem-vindo',
-          style: MyTextStyle.greetingText(context: context, isDark: false),
+          style: MyTextStyle.greetingText(context: context),
         ),
         Text(
           'Josué',
-          style: MyTextStyle.userGreeting(context: context, isDark: false),
+          style: MyTextStyle.userGreeting(context: context),
         ),
       ],
     );

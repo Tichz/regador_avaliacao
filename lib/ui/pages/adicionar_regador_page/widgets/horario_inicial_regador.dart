@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:regador_avaliacao/provider/regador_app_provider.dart';
 import 'package:regador_avaliacao/ui/styles/my_text_styles.dart';
 
-class StartTimeWateringCan extends StatelessWidget {
-  const StartTimeWateringCan({Key? key}) : super(key: key);
+class HorarioInicialRegador extends StatelessWidget {
+  const HorarioInicialRegador({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,12 @@ class StartTimeWateringCan extends StatelessWidget {
               Text(
                 'Horário Inicial',
                 style: MyTextStyle.titulosRegadorStyle(
-                    context: context, isDark: false),
+                    context: context),
               ),
               Text(
                 provider.initialTimeWateringCan.format(context),
                 style: MyTextStyle.hintTextFieldStyle(
-                    context: context, isDark: false),
+                    context: context),
               ),
             ],
           ),

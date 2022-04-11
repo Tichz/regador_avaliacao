@@ -4,16 +4,17 @@ import 'package:intl/intl.dart';
 import 'package:regador_avaliacao/ui/styles/my_colors.dart';
 import 'package:regador_avaliacao/ui/styles/my_text_styles.dart';
 
-class CardRegador extends StatelessWidget {
-  String nomeRegador;
-  int reservatorio;
-  DateTime ultimaAtividade;
-  String statusRegador;
-  TimeOfDay horarioInicial;
-  TimeOfDay horarioFinal;
-  String numeroSerie;
-String capacidadeRegador;
-  CardRegador({
+class ModeloCardRegador extends StatelessWidget {
+  final String nomeRegador;
+  final int reservatorio;
+  final DateTime ultimaAtividade;
+  final String statusRegador;
+  final TimeOfDay horarioInicial;
+  final TimeOfDay horarioFinal;
+  final String numeroSerie;
+  final String capacidadeRegador;
+
+  const ModeloCardRegador({
     Key? key,
     required this.nomeRegador,
     required this.reservatorio,
@@ -29,12 +30,12 @@ String capacidadeRegador;
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        margin: EdgeInsets.all(8),
+        margin: const EdgeInsets.all(8),
         height: 140,
         width: double.maxFinite,
         child: Row(
           children: [
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             Column(
@@ -44,14 +45,14 @@ String capacidadeRegador;
                   height: 80,
                   color: MyColors.corAcao,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 Text(
                   statusRegador,
                   style: MyTextStyle.statusRegadorStyle(
                     context: context,
-                    isDark: false,
+                    
                     statusRegador: statusRegador,
                   ),
                 ),
@@ -66,38 +67,38 @@ String capacidadeRegador;
                   Text(
                     'Nome Regador:',
                     style: MyTextStyle.highlightedTextCard(
-                        context: context, isDark: false),
+                        context: context),
                   ),
                   Text(
                     nomeRegador,
                     style:
-                        MyTextStyle.textCard(context: context, isDark: false),
+                        MyTextStyle.textCard(context: context),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Text(
                     'Reservatório:',
                     style: MyTextStyle.highlightedTextCard(
-                        context: context, isDark: false),
+                        context: context),
                   ),
                   Text(
                     '$reservatorio%',
                     style:
-                        MyTextStyle.textCard(context: context, isDark: false),
+                        MyTextStyle.textCard(context: context),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Text(
                     'Última atividade:',
                     style: MyTextStyle.highlightedTextCard(
-                        context: context, isDark: false),
+                        context: context),
                   ),
                   Text(
-                    '${DateFormat('hh:mm a').format(ultimaAtividade)}',
+                    DateFormat('hh:mm a').format(ultimaAtividade),
                     style:
-                        MyTextStyle.textCard(context: context, isDark: false),
+                        MyTextStyle.textCard(context: context),
                   ),
                 ],
               ),

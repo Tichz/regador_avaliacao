@@ -25,20 +25,20 @@ class _CapacidadeRegadorTextFieldState
   Widget build(BuildContext context) {
     return Consumer<RegadorAppProvider>(builder: (context, provider, child) {
       return TextField(
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           hintText: 'Informe a capacidade',
         ),
         keyboardType:
-            TextInputType.numberWithOptions(decimal: false, signed: false),
+            const TextInputType.numberWithOptions(decimal: false, signed: false),
         controller: provider.capacidadeRegadorController ,
         onChanged: (_) {
           // provider.capacidadeRegadorController
           // provider.pegarControllerCapacidadeRegador(
           //   controllerCapacidadeRegador: _capacidadeRegadorController,
           // );
-          provider.habilitarBotao();
+          provider.habilitarBotaoAdicionarRegadores();
         },
-        style: MyTextStyle.hintTextFieldStyle(context: context, isDark: false),
+        style: MyTextStyle.hintTextFieldStyle(context: context),
         cursorColor: MyColors.corAcao,
       );
     });
